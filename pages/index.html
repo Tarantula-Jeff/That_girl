@@ -1,13 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jewelry Products</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  
+<style>
+  .contact-section {
+  padding: 40px 20px;
+  background-color: #fdf4f2;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+}
+
+.contact-image {
+  flex: 1 1 400px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-form {
+  flex: 1 1 400px;
+  padding: 40px;
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  font-size: 1rem;
+  background: none;
+  resize: none;
+}
+
+.contact-form button {
+  border: 1px solid black;
+  padding: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: black;
+  color: white;
+}
+
+.social {
+  margin-top: 20px;
+}
+
+.social p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+</style>
+
+  <style>
+    /* Smooth scrolling effect */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Button styling */
+    .btn {
+        padding: 12px 20px;
+        font-size: 18px;
+        background-color: blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background-color: darkblue;
+    }
+</style>
+
+  
+  <style>
+
+    /* Initial state: Slide in from the bottom */
+.slide-in-bottom {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease-in-out;
+}
+
+/* Active state: Slides into place */
+.slide-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+  
+  <style>
+    /* Initial state before sliding in */
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  /* Active state when in view */
+  .slide-in-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  </style>
+
+  <style>
+    /* Slider Container */
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      height: 400px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Slider Images */
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    /* Show first image by default */
+    .slides img.active {
+      display: block;
+    }
+  </style>
+ 
+ <style>
+    .underline-custom {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 5px; /* Adjust padding to position underline */
+    }
+    
+    .underline-custom::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px; /* Adjust underline thickness */
+        background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient colors */
+        border-radius: 2px; /* Smooth edges */
+        transform: scaleX(0); /* Start with no underline */
+        transform-origin: right;
+        transition: transform 0.4s ease;
+    }
+    
+    .underline-custom:hover::after {
+        transform: scaleX(1); /* Full underline on hover */
+        transform-origin: left;
+    }
+    </style>
+    
+
+  <style>
+    /* Your in-page CSS */
+    .playwrite-au-vic-guides-regular {
+        font-family: "Playwrite AU VIC Guides", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+</style>
+
+<style>
+.unlock-regular {
+font-family: "Unlock", serif;
+font-weight: 400;
+font-style: normal;
+}
+</style>
+
   <style>
     /* Slide In */
     .slide-in {
@@ -39,108 +260,855 @@
         }
     }
 </style>
-  
+
+      
   <style>
-    /* Animations */
-    .fade-in {
-        animation: fadeIn 2s ease-in-out;
-    }
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
 
-    .slide-in {
-        animation: slideIn 1.5s ease-out;
-    }
-    @keyframes slideIn {
-        from {
-            transform: translateY(-50px);
-            opacity: 0;
-        }
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
+      /* Animations */
+      .fade-in {
+          animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
 
-    .pulse {
-        animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-        0%, 100% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.1);
-        }
-    }
+      .slide-in {
+          animation: slideIn 1.5s ease-out;
+      }
+      @keyframes slideIn {
+          from {
+              transform: translateY(-50px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+
+      .pulse {
+          animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+          0%, 100% {
+              transform: scale(1);
+          }
+          50% {
+              transform: scale(1.1);
+          }
+      }
+  </style>
+
+<style>
+  /* Custom styles for carousel navigation */
+  .carousel-button {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  .carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 </style>
 
 
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+defer
+></script>
+  <style>
+
+.welcome-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.welcome-container {
+  position: relative;
+  width: 650px;
+  height: 650px;
+}
+
+.circle-image {
+  width: 600px;
+  height: 500px;
+  background-image: url('./ring\ \(5\).jpg'); /* Replace this with your actual image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: -40px; /* This pulls it leftward to overlap */
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 25px;
+  width: 250px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.text-box h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text-box p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    /* === NAVIGATION === */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 130px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+    /* === TOP CIRCLE SECTION === */
+    .circle-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      gap: 1.5rem;
+    }
+
+    .circle {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .circle.large {
+      width: 320px;
+      height: 320px;
+    }
+
+    .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .icon-circle img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+
+    /* === JEWELRY PRODUCTS SECTION === */
+    .section {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .product-card {
+      flex: 1 1 280px;
+      max-width: 325px;
+    }
+
+    .product-image {
+      height: 390px;
+      width: 100%;
+      border-radius: 8px;  
+      transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin: 0 5px;
+    }
+
+    .dot.active {
+      background-color: #000;
+    }
+
+    .product-name {
+      font-size: 1rem;
+      margin-top: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+
+    /* === RESPONSIVE BREAKPOINTS === */
+
+    @media (max-width: 1024px) {
+  .welcome-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-box {
+    position: static;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* or any preferred width */
+    text-align: center;
+    
+  }
+.circle-image {
+  max-width: 460px;
+  flex-direction: column;
+    align-items: center;
+
+}
+
+}
+
+
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .circle.large {
+        width: 280px;
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-end;
+        
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+
+      nav a {
+    color: white !important;
+  }
+
+  nav a.jewel-link {
+    color: #d17b52 !important; /* keep orange for jewel even on mobile */
+  }
+
+      .circle {
+        width: 150px;
+        height: 150px;
+      }
+
+      .circle.large {
+        width: 240px;
+        height: 240px;
+      }
+
+      .product-card {
+        flex: 1 1 100%;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .circle {
+        width: 120px;
+        height: 120px;
+      }
+
+      .circle.large {
+        width: 200px;
+        height: 200px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .product-name, .product-price {
+        font-size: 0.95rem;
+      }
+    }
+
+
+    .jewelry-styles {
+  padding: 4rem 2rem;
+  background-color: #d6c0cd62;
+}
+
+.jewelry-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3rem;
+}
+
+.styles-header {
+  text-align: right;
+}
+
+.styles-header .subheading {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: #a47551;
+  font-weight: 600;
+}
+
+.styles-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.styles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.style-card {
+  background: white;
+  padding: 2rem 1rem;
+  width: 210px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background-color: #e6b59b;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.style-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.style-card p {
+  font-size: 0.85rem;
+  color: #444;
+  height: 200px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .styles-header {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .jewelry-wrapper {
+    justify-content: center;
+  }
+
+  .styles-header h2 {
+    font-size: 2rem;
+  }
+
+  .style-card {
+    width: 70%;
+  }
+}
+  </style>
+
+<style>
+  /* Roll-in Animation */
+  /* Initial hidden state */
+  /* Ensure Video Doesn't Overflow */
+  .roll-in {
+      opacity: 0;
+      transform: translateY(100px) rotate(360deg);
+      transition: transform 2s ease-out, opacity 2s ease-out;
+  }
   
+  .roll-in.show {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+  }
+  
+  /* Mobile Fix */
+  @media (max-width: 768px) {
+      .roll-in {
+          transform: translateY(50px); /* Less movement */
+      }
+  
+      .video-container video {
+          max-height: 300px; /* Prevents overflow */
+          width: 100%;
+          object-fit: cover;
+      }
+  }
+  
+      </style>
+
+      <style>
+          @keyframes roll {
+              0% { transform: translateX(100%); }
+              100% { transform: translateX(-100%); }
+          }
+          
+          .animate-roll {
+              width: 200%;
+              display: flex;
+              animation: roll 10s linear infinite;
+          }
+
+          
+.nav-link {
+  color: black;
+}
+
+nav a.jewel-link {
+  color: #d17b52;
+}
+          
+          </style>
 </head>
-<body class="bg-black text-white font-sans">
-  <!-- Navbar -->
-  <header class="flex justify-between items-center py-4 px-8 bg-black text-white">
-    <div class="logo-container slide-in">
-      <img src="https://github.com/Tarantula-Jeff/Cyril-Photos/blob/main/improved%20fold/pic/CYRILPHONOTS%20LOGO-modified.png?raw=true" alt="Cyril Photos Logo" class="w-16 h-16 object-contain pulse">
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo">
+      <img src="./components/logo.jpeg" alt="Logo">
+    </div>
+    <nav>
+   <!-- ✅ REPLACE your existing mobile <ul id="menu">... with this structure just after <nav> -->
+<div id="mobile-overlay" class="sm:hidden fixed inset-0 z-50 hidden">
+  <div class="flex h-full w-full">
+    <!-- 70% Black Sidebar on Left -->
+    <div id="mobileMenu" class="w-[70%] bg-black text-white p-6 relative transform translate-x-full transition-transform duration-700 ease-in-out">
+      <!-- Close Button -->
+      <button id="menu-close" class="absolute top-4 right-4 text-white text-2xl">
+        &times;
+      </button>
+
+      <!-- Navigation Links -->
+      <ul class="mt-12 space-y-6 uppercase text-sm">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#" class="nav-link">About Us</a></li>
+        <li><a href="#" class="nav-link">Contacts</a></li>
+        <li><a href="#" class="nav-link jewel-link">Jewel Products</a></li>
+      </ul>
+    </div>
+
+    <!-- 30% Transparent Ash Background on Right -->
+    <div id="menu-backdrop" class="w-[30%] bg-gray-400 bg-opacity-30" role="button"></div>
   </div>
-    <nav class="space-x-8 text-lg font-medium">
-      <a href="https://cyril-photos.vercel.app/" class="hover:text-gray-400">Home</a>
-      <a href="https://cyril-photos.vercel.app/About.html" class="hover:text-yellow-400">About</a>
+</div>
+
+<!-- ✅ Your Hamburger Button remains the same -->
+<button id="menu-toggle" class="sm:hidden text-black text-2xl focus:outline-none">
+  &#9776;
+</button>
+<!-- Desktop Nav: visible only on sm and above -->
+<ul class="hidden sm:flex items-center space-x-6 uppercase text-sm">
+  <li><a href="#" class="nav-link">Home</a></li>
+  <li><a href="#" class="nav-link">About Us</a></li>
+  <li><a href="#" class="nav-link">Contacts</a></li>
+  <li><a href="#" class="nav-link jewel-link">Jewel Products</a></li>
+</ul>
+
     </nav>
-    <div class="flex space-x-4">
-      <a href="https://www.facebook.com/share/184zfjj9mw/?mibextid=LQQJ4d" target="_blank" class="text-xl hover:text-blue-500">
-          <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://instagram.com/__cyrilphotos?igshid=NTc4MTIwNjQ2YQ==https://instagram.com/your-page" target="_blank" class="text-xl hover:text-pink-500">
-          <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://wa.me/+233543591986" target="_blank" class="text-xl hover:text-green-500">
-          <i class="fab fa-whatsapp"></i>
-      </a>
-  </div>
-  
   </header>
 
-  <!-- Contact Section -->
-  <section id="contact" class="min-h-screen flex flex-col justify-center items-center px-8">
-    <div class="flex flex-col lg:flex-row justify-between items-start w-full max-w-6xl">
-      <!-- Contact Info -->
-      <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
-        <h2 class="text-5xl font-bold mb-4">Contact</h2>
-        <p class="text-lg mb-4 text-yellow-700 hover:text-gray-400">Cyril Photos operates independently under its own brand.</p>
-        <p class="text-lg mb-2">Email: <a href="cyrillisk889@gmail.com" class="hover:text-yellow-400">cyrillisk889@gmail.com</a></p>
-        <p class="text-lg mb-6">Phone: <a href="tel:+233543591986" class="hover:text-yellow-400">+233543591986</a></p>
-      </div>
+  <!-- Circle Section -->
+  <section class="circle-section">
+    <div class="circle">
+      <img src="./ring (8).jpg" alt="">
+    </div>
+    <div class="circle large">
+      <img src="./ring (7).jpg" alt="">
+    </div>
+    <div class="circle">
+      <img src="./ring (6).jpg" alt="">
+    </div>
+  </section>
 
-      <!-- Contact Form -->
-      <div class="w-full lg:w-1/2">
-        <form id="contactForm" action="/api/send-email" method="POST" class="space-y-4">
-            <div class="flex space-x-4">
-              <input type="text" name="firstName" placeholder="First Name *" required
-                class="w-1/2 p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
-              <input type="text" name="lastName" placeholder="Last Name *" required
-                class="w-1/2 p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
-            </div>
-            <input type="email" name="email" placeholder="Email *" required
-              class="w-full p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
-            <input type="text" name="phone" placeholder="Phone"
-              class="w-full p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
-            <textarea name="message" rows="4" placeholder="Leave us a message..." required
-              class="w-full p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
-            <button type="submit"
-              class="w-full py-3 bg-yellow-400 text-black font-bold rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400">
-              Submit
-            </button>
-          </form>          
+<!--Welcome blog-->
+<section class="welcome-section">
+  <div class="welcome-container">
+    <div class="circle-image"></div>
+    <div class="text-box slide-in-left">
+      <h2 class="slide-in-left">Welcome!</h2>
+      <p class="slide-in-right"><em>New season, new shine. Elevate your summer style with radiant, gold-plated jewelry that pairs perfectly with sun-kissed skin and breezy outfits—because your accessories should shine as bright as you do.</em></p>
+    </div>
+  </div>
+</section>
+
+  
+
+<!-- Jewelry Styles Section -->
+<section class="jewelry-styles">
+    <div class="jewelry-wrapper slide-in-left">
+      <div class="styles-header">
+        <span class="subheading">JEWELRY STYLES</span>
+        <h2>Everyday <br> Elegance</h2>
+      </div>
+    </div>
+  
+    <div class="styles-grid">
+      <div class="style-card slide-in">
+        <div class="icon-circle slide-in pulse">
+          <img src="./components/bracelet.png" alt="Bracelet Icon" />
+        </div>
+        <h3>BRACELETS</h3>
+        <p>Duis aute irure doloreprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+      </div>
+      
+      <div class="style-card slide-in-bottom">
+        <div class="icon-circle slide-in pulse">
+          <img src="./components/hoop-earrings.png" alt="Earring Icon" />
+        </div>
+        <h3>EARRINGS</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+      </div>
+      
+      <div class="style-card slide-in">
+        <div class="icon-circle slide-in pulse">
+          <img src="./components/jewelry.png" alt="Necklace Icon" />
+        </div>
+        <h3>NECKLACE</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+      </div>
+      
+      <div class="style-card slide-in-bottom">
+        <div class="icon-circle slide-in pulse">
+          <img src="./components/anklet.png" alt="Anklet Icon" />
+        </div>
+        <h3>ANKLETS</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+      </div>
+      
+      <div class="style-card slide-in">
+        <div class="icon-circle slide-in pulse">
+          <img src="./components/wedding-rings.png" alt="Ring Icon" />
+        </div>
+        <h3>RINGS</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+      </div>
+    </div>
+    
+  </section>
+  
+  
+  <section class="section">
+    <h1>Jewelry Collection</h1>
+    <div class="products">
+  
+      <!-- Product 1 -->
+      <div class="product-card" data-images='[
+        "./ring (1).jpg",
+        "./ring (2).jpg",
+        "./ring (3).jpg"
+      ]'>
+        <img class="product-image" src="https://via.placeholder.com/400x400/FFD700/000000?text=CHAIN+buttS+1" />
+        <div class="dots">
+          <div class="dot active" data-index="0"></div>
+          <div class="dot" data-index="1"></div>
+          <div class="dot" data-index="2"></div>
+        </div>
+        <div class="product-name">CHAIN TINS</div>
+        <div class="product-price">GHC 300</div>
+      </div>
+  
+      <!-- Product 2 -->
+      <div class="product-card" data-images='[
+        "https://via.placeholder.com/400x400/8A2BE2/ffffff?text=PURPLE+GLAM+1",
+        "https://via.placeholder.com/400x400/4B0082/ffffff?text=PURPLE+GLAM+2"
+      ]'>
+        <img class="product-image" src="https://via.placeholder.com/400x400/8A2BE2/ffffff?text=PURPLE+GLAM+1" />
+        <div class="dots">
+          <div class="dot active" data-index="0"></div>
+          <div class="dot" data-index="1"></div>
+        </div>
+        <div class="product-name">PURPLE GLAM</div>
+        <div class="product-price">GHC 250</div>
+      </div>
+  
+      <!-- Product 3 -->
+      <div class="product-card" data-images='[
+        "https://via.placeholder.com/400x400/FF69B4/ffffff?text=PINKY+1",
+        "https://via.placeholder.com/400x400/FFC0CB/000000?text=PINKY+2"
+      ]'>
+        <img class="product-image" src="https://via.placeholder.com/400x400/FF69B4/ffffff?text=PINKY+1" />
+        <div class="dots">
+          <div class="dot active" data-index="0"></div>
+          <div class="dot" data-index="1"></div>
+        </div>
+        <div class="product-name">PINKY</div>
+        <div class="product-price">GHC 270</div>
+      </div>
+  
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <!-- Left Side - Image -->
+      <div class="contact-image">
+        <img src="https://via.placeholder.com/400x500?text=Jewelry+Hand" alt="Jewelry Hand">
+      </div>
+  
+      <!-- Right Side - Form -->
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="/api/send-email" method="POST">
+          <input type="text" name="name" placeholder="Enter your Name" required />
+          <input type="email" name="email" placeholder="Enter a valid email address" required />
+          <textarea name="message" placeholder="Enter your message" rows="4" required></textarea>
+          <button type="submit">SUBMIT</button>
+        </form>
+        
+        <!-- Social Links -->
+        <div class="social">
+          <p>follow us</p>
+          <div class="social-icons">
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" /></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+  
+  
+  <script>
+    document.querySelectorAll('.product-card').forEach((card) => {
+      const images = JSON.parse(card.getAttribute('data-images'));
+      const img = card.querySelector('.product-image');
+      const dots = card.querySelectorAll('.dot');
+      let index = 0;
+      let intervalId;
+      let isHovered = false;
+  
+      img.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+  
+      function showImage(i) {
+        img.style.opacity = '0';
+        img.style.transform = 'translateX(30px)';
+  
+        setTimeout(() => {
+          img.src = images[i];
+          img.style.opacity = '1';
+          img.style.transform = 'translateX(0)';
+          dots.forEach(dot => dot.classList.remove('active'));
+          dots[i].classList.add('active');
+        }, 300);
+      }
+  
+      function startSlider() {
+        intervalId = setInterval(() => {
+          if (!isHovered) {
+            index = (index + 1) % images.length;
+            showImage(index);
+          }
+        }, 4000);
+      }
+  
+      card.addEventListener('mouseenter', () => isHovered = true);
+      card.addEventListener('mouseleave', () => isHovered = false);
+  
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          index = parseInt(dot.dataset.index);
+          showImage(index);
+        });
+      });
+  
+      startSlider();
+    });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const slideElements = document.querySelectorAll(".slide-in, .slide-out");
+
+      const observer = new IntersectionObserver(
+          (entries) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add("slide-in");
+                      entry.target.classList.remove("slide-out");
+                  } else {
+                      entry.target.classList.remove("slide-in");
+                      entry.target.classList.add("slide-out");
+                  }
+              });
+          },
+          { threshold: 0.1 } // Trigger animation when 10% of the element is visible
+      );
+
+      slideElements.forEach((el) => observer.observe(el));
+  });
+</script>
+<!--slides script-->
+<script>
+  const slides = document.querySelectorAll(".slides img");
+  let currentIndex = 0;
+
+  function showNextSlide() {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Change image every 2 seconds (2000ms)
+  setInterval(showNextSlide, 5000);
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slideInElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-active');
+        } else {
+          entry.target.classList.remove('slide-in-active'); // Remove when scrolling out
+        }
+      });
+    }, { threshold: 0.2 });
+  
+    slideInElements.forEach(el => observer.observe(el));
+  });
+  
+  </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slideInElements = document.querySelectorAll('.slide-in-bottom');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('slide-in-active');
+      } else {
+        entry.target.classList.remove('slide-in-active'); // Remove on scroll out
+      }
+    });
+  }, { threshold: 0.2 });
+
+  slideInElements.forEach(el => observer.observe(el));
+});
+</script>
+
+<!-- ✅ JavaScript to toggle the menu -->
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuClose = document.getElementById("menu-close");
+  const mobileOverlay = document.getElementById("mobile-overlay");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuBackdrop = document.getElementById("menu-backdrop");
+
+  // Show mobile menu
+  menuToggle.addEventListener("click", () => {
+    mobileOverlay.classList.remove("hidden");
+    setTimeout(() => {
+      mobileMenu.classList.remove("translate-x-full");
+    }, 10);
+  });
+
+  // Hide mobile menu
+  function closeMobileMenu() {
+    mobileMenu.classList.add("translate-x-full");
+    setTimeout(() => {
+      mobileOverlay.classList.add("hidden");
+    }, 400); // wait for slide-out to finish
+  }
+
+  menuClose.addEventListener("click", closeMobileMenu);
+  menuBackdrop.addEventListener("click", closeMobileMenu);
+</script>
+
+
+  
 </body>
 </html>

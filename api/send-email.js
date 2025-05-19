@@ -5,39 +5,38 @@ export default async function handler(req, res) {
     return res.status(405).send({ message: "Only POST requests are allowed" });
   }
 
-  const { firstName, lastName, email, phone, message } = req.body;
+  const { firstName, lastName, name, email, phone, message } = req.body;
+  const fullName = firstName && lastName
+    ? `${firstName} ${lastName}`
+    : name || "No name provided";
 
   try {
-    // Configure the transporter
     const transporter = nodemailer.createTransport({
-      service: "Gmail", // Or another email provider
+      service: "Gmail",
       auth: {
-        user: process.env.EMAIL_USER, // Your email
-        pass: process.env.EMAIL_PASS, // Your email password or app password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Configure the email
     const mailOptions = {
       from: `"Cyril Photos" <${process.env.EMAIL_USER}>`,
-      to: process.env.RECEIVER_EMAIL, // Receiver's email
+      to: process.env.RECEIVER_EMAIL,
       subject: "CYRIL-Frames Connect",
       text: `
                 BOOKING MESSAGE
       -------------------------------------
       
-        Name: ${firstName} ${lastName}
+        Name: ${fullName}
         Email: ${email}
         Phone: ${phone || "Not provided"}
         Message: ${message}
       `,
     };
 
-    // Send the email
     await transporter.sendMail(mailOptions);
 
-    // Redirect to success page on successful email
-    return res.redirect(303, "https://cyril-photos.vercel.app/success.html"); // 303 ensures the browser performs a GET request to the success page
+    return res.redirect(303, "https://cyril-photos.vercel.app/success.html");
   } catch (error) {
     console.error("Email Error:", error);
     return res.status(500).send({ message: "Email could not be sent", error });
