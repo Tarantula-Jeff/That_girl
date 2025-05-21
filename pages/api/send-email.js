@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: `"That Girl Jewels" <${process.env.EMAIL_USER}>`,
       to: process.env.RECEIVER_EMAIL,
-      subject: "THAT GIRL Jewel Order",
+      subject: "THAT GIRL MUST HAVES ORDERS",
       text: `
           NEW ORDER DETAILS
   -------------------------------------
