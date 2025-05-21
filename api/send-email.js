@@ -5,10 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).send({ message: "Only POST requests are allowed" });
   }
 
-  const { firstName, lastName, name, email, phone, message } = req.body;
-  const fullName = firstName && lastName
-    ? `${firstName} ${lastName}`
-    : name || "No name provided";
+  const { name, email, contact, deliveryAddress, item, numberOfItems, message } = req.body;
 
   try {
     const transporter = nodemailer.createTransport({
@@ -22,15 +19,20 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: `"Cyril Photos" <${process.env.EMAIL_USER}>`,
       to: process.env.RECEIVER_EMAIL,
-      subject: "CYRIL-Frames Connect",
+      subject: "CYRIL-Frames Order",
       text: `
-                BOOKING MESSAGE
-      -------------------------------------
-      
-        Name: ${fullName}
-        Email: ${email}
-        Phone: ${phone || "Not provided"}
-        Message: ${message}
+          NEW ORDER DETAILS
+  -------------------------------------
+
+  Name: ${name}
+  Email: ${email}
+  Contact: ${contact || "Not provided"}
+  Delivery Address: ${deliveryAddress || "Not provided"}
+  Item: ${item || "Not specified"}
+  Quantity: ${numberOfItems || 0}
+  Message: ${message || "None"}
+
+  -------------------------------------
       `,
     };
 

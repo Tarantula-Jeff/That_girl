@@ -928,35 +928,69 @@ nav a.jewel-link {
     </div>
   </section>
 
-  <section class="contact-section">
-    <div class="contact-container">
-      <!-- Left Side - Image -->
-      <div class="contact-image">
-        <img src="https://via.placeholder.com/400x500?text=Jewelry+Hand" alt="Jewelry Hand">
-      </div>
-  
-      <!-- Right Side - Form -->
-      <div class="contact-form">
-        <h2>Contact Us</h2>
-        <form action="/api/send-email" method="POST">
-          <input type="text" name="name" placeholder="Enter your Name" required />
-          <input type="email" name="email" placeholder="Enter a valid email address" required />
-          <textarea name="message" placeholder="Enter your message" rows="4" required></textarea>
-          <button type="submit">SUBMIT</button>
-        </form>
+ <section class="contact-section"> 
+  <div class="contact-container">
+    <!-- Left Side - Image -->
+    <div class="contact-image">
+      <img src="https://via.placeholder.com/400x500?text=Jewelry+Hand" alt="Jewelry Hand">
+    </div>
+
+    <!-- Right Side - Form -->
+    <div class="contact-form">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 60px; font-weight: bold;">
+  Order UP
+</h3>
+      <form action="/api/send-email" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
         
-        <!-- Social Links -->
-        <div class="social">
-          <p>follow us</p>
-          <div class="social-icons">
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" /></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
-          </div>
+        <div style="display: flex; flex-direction: column;">
+          <label for="name" style="font-weight: bold; color: black;">Name</label>
+          <input type="text" name="name" id="name" placeholder="Enter your Name" required />
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <label for="email" style="font-weight: bold; color: black;">Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter a valid email address" required />
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <label for="contact" style="font-weight: bold; color: black;">Contact</label>
+          <input type="tel" name="contact" id="contact" placeholder="Enter your contact number" required />
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <label for="address" style="font-weight: bold; color: black;">Delivery Address</label>
+          <input type="text" name="address" id="address" placeholder="Enter delivery address" required />
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <label for="item" style="font-weight: bold; color: black;">Item</label>
+          <input type="text" name="item" id="item" placeholder="Enter the item name" required />
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <label for="quantity" style="font-weight: bold; color: black;">Number of Items</label>
+          <input type="number" name="quantity" id="quantity" placeholder="Number of items" min="0" required />
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <label for="message" style="font-weight: bold; color: black;">Message</label>
+          <textarea name="message" id="message" placeholder="Enter your message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+
+      <!-- Social Links -->
+      <div class="social">
+        <p>follow us</p>
+        <div class="social-icons">
+          <a href="https://wa.me/+233269888920"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" /></a>
+          <a href="https://www.instagram.com/that_girl_must_haves_jewelry?igsh=MXhrdzFzZmwyZ3g3ag=="><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
   
   
   <script>
