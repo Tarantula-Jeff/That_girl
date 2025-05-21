@@ -5,7 +5,9 @@ export default async function handler(req, res) {
     return res.status(405).send({ message: "Only POST requests are allowed" });
   }
 
-  const { name, email, contact, deliveryAddress, item, numberOfItems, message } = req.body;
+
+  const { name, email, contact, deliveryAddress, item, quantity, message } = req.body;
+
 
   try {
     const transporter = nodemailer.createTransport({
@@ -29,7 +31,7 @@ export default async function handler(req, res) {
   Contact: ${contact || "Not provided"}
   Delivery Address: ${deliveryAddress || "Not provided"}
   Item: ${item || "Not specified"}
-  Quantity: ${numberOfItems || 0}
+  Quantity: ${quantity}
   Message: ${message || "None"}
 
   -------------------------------------
