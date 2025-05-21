@@ -17,9 +17,9 @@ export default async function handler(req, res) {
     });
 
     const mailOptions = {
-      from: `"Cyril Photos" <${process.env.EMAIL_USER}>`,
+      from: `"That Girl Jewels" <${process.env.EMAIL_USER}>`,
       to: process.env.RECEIVER_EMAIL,
-      subject: "CYRIL-Frames Order",
+      subject: "THAT GIRL Jewel Order",
       text: `
           NEW ORDER DETAILS
   -------------------------------------
